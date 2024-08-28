@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Add from "./add";
+import Link from "next/link";
 
 interface cardProps {
+  id: string;
   title: string;
   description: string;
   company: string;
@@ -9,17 +12,27 @@ interface cardProps {
   image: string;
 }
 
-const Card = ({ title, description, company, location }: cardProps) => {
+const Card = ({
+  id,
+  title,
+  description,
+  company,
+  location,
+  image,
+}: cardProps) => {
   return (
     <div className="px-5 py-3 flex bg-white text-slate-800 border-2 my-3 rounded-[30px] ">
       <div className="mr-3">
-        <Image src="/assets/logo.png" width={66} height={59} alt="logo" />
+        <Image src={image} width={66} height={59} alt="logo" />
       </div>
       <div className="max-w-3xl">
-        <div>
-          <h3 className="text-slate-800 font-semibold  text-xl mb-2 font-epilogue">
-            {title}
-          </h3>
+        <div className="flex items-center justify-between w-full">
+          <Link href={`/post/${id}`}>
+            <h3 className="text-slate-800 font-semibold  text-xl mb-2 font-epilogue">
+              {title}
+            </h3>
+          </Link>
+          <Add id={id} />
         </div>
 
         <div className="text-slate-500 text-base font-normal my-2 flex">

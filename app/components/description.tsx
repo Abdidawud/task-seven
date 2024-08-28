@@ -1,7 +1,5 @@
 import React from "react";
-import Jobs from "./../jobs";
 import Image from "next/image";
-import { JobPostingbyId } from "../type/type";
 import { useGetJobPostingbyIdQuery } from "../Data/data";
 
 const Description = ({ id }: { id: string }) => {

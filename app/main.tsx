@@ -37,16 +37,15 @@ export default function Home() {
       <div className="flex justify-center">
         <div>
           {data?.data.map((job, id) => (
-            <Link href={`/post/${job.id}`} key={id}>
-              <Card
-                // key={id}
-                title={job.title}
-                description={job.description}
-                company={job.orgName}
-                location={job.location[0]}
-                image={job.logoUrl}
-              />
-            </Link>
+            <Card
+              key={id}
+              id={job.id}
+              title={job.title}
+              description={job.description}
+              company={job.orgName}
+              location={job.location[0]}
+              image={job.logoUrl}
+            />
           ))}
           <Description id={"1"} />
         </div>
