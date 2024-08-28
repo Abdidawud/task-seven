@@ -17,6 +17,7 @@ Screenshots
 Display job postings in card format.
 Dashboard to manage job postings.
 Responsive design.
+Have Bookmark Feature
 
 Installation
 
